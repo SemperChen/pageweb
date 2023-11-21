@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>移动端分类网站</title>
     <style>
+        :root {
+            --background-color: #f9f9f9;
+            --text-color: black;
+            --active-item-color: #fff;
+            --sidebar-border-color: #eee;
+            --main-content-border-color: #f8f8f8;
+            --link-color: black;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #181818;
+                --text-color: #ffffff;
+                --active-item-color: #303030;
+                --sidebar-border-color: #333333;
+                --main-content-border-color: #333333;
+                --link-color: #9a9a9a;
+            }
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,6 +32,9 @@
             overflow: hidden;
             height: 100vh;
             width: 100vw;
+            background-color: var(--background-color);
+            color: var(--text-color);
+
         }
 
         .container {
@@ -23,7 +44,8 @@
         }
 
         .sidebar {
-            background-color: #f9f9f9;
+            background-color: var(--background-color);
+            border-top: 1px solid var(--sidebar-border-color);
             position: fixed;
             height: calc(100vh - 48px);
             width: 30%;
@@ -66,21 +88,26 @@
         }
 
         .active {
-            background-color: #fff;
+            background-color: var(--active-item-color);
+
         }
 
 
         .main-contentulli {
             padding: 20px;
-            border-bottom: 1px solid #f8f8f8;
-
             cursor: pointer;
             transition: .3s;
+            border-bottom: 1px solid var(--main-content-border-color);
+
         }
 
         .custom-link {
-            /* color:black; */
+            color: var(--link-color);
             text-decoration: none;
+        }
+        h3 {
+            background-color: var(--background-color);
+            /* ... */
         }
     </style>
 </head>
